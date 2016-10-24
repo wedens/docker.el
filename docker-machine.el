@@ -162,6 +162,15 @@
     (docker-machine-env (car marked))
     (tablist-revert)))
 
+(magit-define-popup docker-machine-create-popup
+  "Popup for creating machines."
+  'docker-machine-popups
+  :man-page "docker-machine-create"
+  :options  '((?n "name" "--name ")
+              (?d "driver" "--driver "))
+  :actions  '((?C "Create" docker-machine-create))
+  :default-arguments '("--driver virtualbox"))
+
 (docker-utils-define-popup docker-machine-start-popup
   "Popup for starting machines."
   'docker-machine-popups
